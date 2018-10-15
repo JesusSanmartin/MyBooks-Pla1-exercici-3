@@ -51,11 +51,7 @@ public class BookDetailFragment extends Fragment {
 
             bookItem = DummyContent.BOOK_ITEM_MAP.get(Integer.parseInt(getArguments().getString(ARG_ITEM_ID)));
 
-            Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(bookItem.getTitle());
-            }
+
         }
     }
 
@@ -72,7 +68,14 @@ public class BookDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.textAuthor)).setText(bookItem.getAuthor());
             ((TextView) rootView.findViewById(R.id.textDate)).setText(sdf.format(bookItem.getPublish_date()));
             ((TextView) rootView.findViewById(R.id.textDescription)).setText(bookItem.getDescription());
+            //Load CollapsingToolbarLayout
+            Activity activity = this.getActivity();
+            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
+            if (appBarLayout != null) {
+                appBarLayout.setTitle(bookItem.getTitle());
+            }
         }
+
 
         return rootView;
     }
