@@ -20,7 +20,7 @@ public class BookItem {
         this.author = author;
         this.publish_date = new Date();
         this.description = description;
-        this.image_url = "de moment és imatge fixe";
+        this.image_url = "imatge fixe";
     }
 
 
